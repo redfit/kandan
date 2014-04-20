@@ -207,6 +207,6 @@ class Kandan.Plugins.Notifications
     channels = Kandan.Helpers.Channels.getCollection()
     html = "<li><ul class='channel_list'><li class='caption'>Receive notifications from ...</li>"
     for channel in channels.models
-      html += "<li class='channel'><label>" + channel.attributes.name + "</label></li>"
+      html += "<li class='channel'><label><input type='checkbox' checked>" + channel.attributes.name + "</label></li>"
     html += "</ul></li>"
     container.append(html)
