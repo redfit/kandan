@@ -43,6 +43,7 @@ class Kandan.Plugins.Notifications
     @initFluidNotifications($notifications)
     @initWebkitNotifications($notifications)
     @initSoundNotifications($notifications)
+    @initTargetChannelList($notifications)
 
     return
 
@@ -201,3 +202,11 @@ class Kandan.Plugins.Notifications
       setTimeout (=> @isPlaying = false), 1000
       Kandan.Plugins.MusicPlayer.playAudioNotice(type)
     return
+
+  @initTargetChannelList: (container)->
+    channels = Kandan.Helpers.Channels.getCollection()
+    html = "<li><ul>"
+    for channel in channels.models
+      html += "<li><label>" + channel.attributes.name + "</label></li>"
+    html += "</ul></li>"
+    container.append(html)
