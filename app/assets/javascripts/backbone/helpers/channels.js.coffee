@@ -109,7 +109,7 @@ class Kandan.Helpers.Channels
 
     @flushActivities(activityAttributes.channel_id)
 
-     # 手元でテストするときは and Kandan.Helpers以下をコメントアウトすると便利
+    # 手元でテストするときは and Kandan.Helpers以下をコメントアウトすると便利
     if not local and activityAttributes.action == "message" and Kandan.Helpers.Utils.browserTabFocused != true
       Kandan.Helpers.Utils.notifyInTitle()
       Kandan.Plugins.Notifications.playAudioNotification('channel')
