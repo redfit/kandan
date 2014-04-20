@@ -205,8 +205,8 @@ class Kandan.Plugins.Notifications
 
   @initTargetChannelList: (container)->
     channels = Kandan.Helpers.Channels.getCollection()
-    html = "<li><ul>"
+    html = "<li><ul class='channel_list'><li class='caption'>Receive notifications from ...</li>"
     for channel in channels.models
-      html += "<li><label>" + channel.attributes.name + "</label></li>"
+      html += "<li class='channel'><label>" + channel.attributes.name + "</label></li>"
     html += "</ul></li>"
     container.append(html)
